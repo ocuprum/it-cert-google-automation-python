@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+import os
 from reports import generate_report
 from emails import generate_email, send_email
 
@@ -12,4 +14,11 @@ for text in os.listdir(desc_dir):
 
 generate_report(report_name, title, additional_info)
 
+if __name__ == '__main__':
+    sender = 'automation@example.com'
+    recipient = 'username@example.com'
+    subject = 'Upload Completed - Online Fruit Store'
+    body = 'All fruits are uploaded to our website successfully. A detailed list is attached to this email.'
+    ap = '/supplier-data/descriptions/processed.pdf'
+    message = generate_email(sender, recipient, subject, body, ap)
 
