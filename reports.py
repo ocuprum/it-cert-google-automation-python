@@ -6,7 +6,7 @@ from reportlab.platypus import Paragraph, Spacer, Table, Image
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.lib import colors
 
-def generate_report(filename, title, additional_info):
+def generate_report(filename: str, title: str, additional_info: str) -> None:
     styles = getSampleStyleSheet()
     report = SimpleDocTemplate(filename)
     report_title = Paragraph(title, styles['h1'])
