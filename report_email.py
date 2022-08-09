@@ -21,4 +21,4 @@ if __name__ == '__main__':
     body = 'All fruits are uploaded to our website successfully. A detailed list is attached to this email.'
     ap = '/supplier-data/descriptions/processed.pdf'
     message = generate_email(sender, recipient, subject, body, ap)
-
+    send_email(message)
