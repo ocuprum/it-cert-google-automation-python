@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import os
+from datetime import date 
 from reports import generate_report
 from emails import generate_email, send_email
 
