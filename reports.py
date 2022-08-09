@@ -13,14 +13,3 @@ def generate_report(filename: str, title: str, additional_info: str) -> None:
     report_info = Paragraph(additional_info, styles['BodyText'])
     empty_line = Spacer(1, 20)
     report.build([report_title, empty_line, report_info, empty_line])
-
-report_name = 'processed.pdf'
-title = 'Processed Update on {}'.format(date.today)
-
-desc_dir = '/supplier-data/descriptions/'
-os.chdir(desc_dir)
-additional_info = ''
-for text in os.listdir(desc_dir):
-    additional_info += '{}\n{}\n'.format(*text.read().rstrip().split()[:2])
-
-generate_report(report_name, title, additional_info)
